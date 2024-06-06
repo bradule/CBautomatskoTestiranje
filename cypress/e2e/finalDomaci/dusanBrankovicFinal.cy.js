@@ -177,5 +177,6 @@ describe("Logging in", () => {
       .and("be.visible")
       .and("not.have.css", "background-color", "rgb(51, 204, 153)");
     cy.get('img[alt="itk"]').click();
+    console.log("Logged in, not active");
   });
 });
