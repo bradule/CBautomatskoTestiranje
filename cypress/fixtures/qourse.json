@@ -1,0 +1,303 @@
+{
+  "titles": {
+    "page1": {
+      "0": "Question 1/9",
+      "1": "Over the past month",
+      "2": "To what extent has sleep troubled you in general?"
+    },
+    "page2": {
+      "0": "Question 2/9",
+      "1": "Over the past month",
+      "2": "How many nights a week have you had a problem with your sleep?"
+    },
+    "page3": {
+      "0": "Question 3/9",
+      "1": "Over the past month",
+      "2": "Would you still have a sleep problem if you had more time to sleep?"
+    },
+    "page4": {
+      "0": "Question 4/9",
+      "1": "Which of the following stops you from sleeping most often?",
+      "2": "",
+      "3": "Select the one that affects you most"
+    },
+    "page5": {
+      "0": "Question 5/9",
+      "1": "How long have you had a problem with your sleep?"
+    },
+    "page6": {
+      "0": "Question 6/9",
+      "1": "How would you like to improve your sleep?",
+      "2": "",
+      "3": "Select all that apply"
+    },
+    "page7": {
+      "0": "Question 7/9",
+      "1": "Which of the following expert guides might be of interest to you?",
+      "2": "",
+      "3": "Select all that apply"
+    },
+    "page8": {
+      "0": "Question 8/9",
+      "1": "How would you describe your gender?"
+    },
+    "page9": { "0": "Question 9/9", "1": "What is your date of birth?" },
+    "page10": { "0": "Question 10/9", "1": "What is your gender?" },
+    "page1of20": {
+      "0": "Question 1/20",
+      "1": "To tailor Sleepio for your specific needs, we'll ask about your sleep patterns, your health and your lifestyle.",
+      "2": "Let’s start by having you think about a typical night over the past month."
+    },
+    "page2of20": {
+      "0": "Question 2/20",
+      "1": "Over the past month, to what extent has poor sleep affected your concentration, productivity, or ability to stay awake?"
+    },
+    "page3of20": {
+      "0": "Question 3/20",
+      "1": "Over the past month, to what extent has poor sleep affected your mood, energy, or relationships?"
+    },
+    "page4of20": {
+      "0": "Question 4/20",
+      "1": "Sleepio targets the root causes of sleep problems to give you results that last.*",
+      "2": "Are you ready for a long-term solution?"
+    },
+    "page5of20": {
+      "0": "Question 5/20",
+      "1": "Do you use prescription sleep medications?"
+    },
+    "page6of20": {
+      "0": "Question 6/20",
+      "1": "Do you use non-prescription sleep remedies?"
+    },
+    "page7of20": {
+      "0": "Question 7/20",
+      "1": "Sleepio is a 6-week program based on CBTi - Cognitive Behavioral Therapy for Insomnia. It’s scientifically proven to improve sleep*.",
+      "2": "Have you tried CBTi before?"
+    },
+    "page8of20": {
+      "0": "Question 8/20",
+      "1": "Over the past two weeks, how often have you been bothered by little interest or pleasure in doing things?"
+    },
+    "page9of20": {
+      "0": "Question 9/20",
+      "1": "Over the past two weeks, how often have you been bothered by feeling down, depressed or hopeless?"
+    },
+    "page10of20": {
+      "0": "Question 10/20",
+      "1": "Over the past two weeks, how often have you been bothered by feeling nervous, anxious or on edge?"
+    },
+    "page11of20": {
+      "0": "Question 11/20",
+      "1": "Over the past two weeks, how often have you been bothered by not being able to stop or control worrying?"
+    },
+    "page12of20": {
+      "0": "Question 12/20",
+      "1": "Over the past two weeks, how often have you felt that you were unable to control the important things in your life?"
+    },
+    "page13of20": {
+      "0": "Question 13/20",
+      "1": "Sleepio features interactive videos that will require your time and commitment.",
+      "2": "Can you dedicate 20 minutes each week to improve your sleep?"
+    },
+    "page14of20": {
+      "0": "Question 14/20",
+      "1": "What is your employment status?"
+    },
+    "page15of20": {
+      "0": "Question 15/20",
+      "1": "Are you a shift worker?"
+    },
+    "page16of20": {
+      "0": "Question 16/20",
+      "1": "Are you a truck or bus driver, air traffic controller, operator of heavy machinery, or assembly line worker?"
+    },
+    "page17of20": {
+      "0": "Question 17/20",
+      "1": "Over the past 2 weeks",
+      "2": "How much did poor sleep affect your productivity while you were working?"
+    },
+    "page18of20": {
+      "0": "Question 18/20",
+      "1": "Over the past 2 weeks",
+      "2": "How many hours did you miss from your work per week because of problems associated with your sleep?",
+      "3": "(Include sick days, late starts, early finishes etc.)"
+    },
+    "page19of20": {
+      "0": "Question 19/20",
+      "1": "One last thing... Choose a community username"
+    },
+    "page20of20": {
+      "0": "Question 20/20",
+      "1": "Over the past two weeks, how often have you been bothered by feeling down, depressed or hopeless?"
+    }
+  },
+  "firstQuestion": {
+    "0": "Not at all",
+    "1": "A little",
+    "2": "Somewhat",
+    "3": "Much",
+    "4": "Very much"
+  },
+  "secondQuestion": {
+    "0": "0 nights",
+    "1": "1 night",
+    "2": "2 nights",
+    "3": "3 nights",
+    "4": "4 nights",
+    "5": "5 nights",
+    "6": "6 nights",
+    "7": "7 nights"
+  },
+  "thirdQuestion": {
+    "0": "Yes, my problem would persist",
+    "1": "No"
+  },
+  "fourthQuestion": {
+    "0": "Worries about future events",
+    "1": "Worries about not sleeping",
+    "2": "Bodily discomfort or pain",
+    "3": "Noise",
+    "4": "Light levels"
+  },
+  "fifthQuestion": {
+    "0": "I don't have a problem",
+    "1": "A week or less",
+    "2": "2-4 weeks",
+    "3": "1-2 months",
+    "4": "3-6 months",
+    "5": "7-12 months",
+    "6": "1-2 years",
+    "7": "3-5 years",
+    "8": "6-10 years",
+    "9": "11 or more years"
+  },
+  "sixtQuestion": {
+    "0": "Fall asleep more easily",
+    "1": "Sleep through the night without waking up",
+    "2": "Stop waking up too early",
+    "3": "Wake up feeling refreshed",
+    "4": "None of the above"
+  },
+  "seventhQuestion": {
+    "0": "Dealing with jet lag",
+    "1": "Shift work and sleep",
+    "2": "Managing your sleep as a parent",
+    "3": "Pregnancy and sleep",
+    "4": "None of the above"
+  },
+  "eigthQuestion": {
+    "0": "Male",
+    "1": "Female",
+    "2": "In another way",
+    "3": "Prefer not to say"
+  },
+  "validEmails": {
+    "0": "email@example.com",
+    "1": "firstname.lastname@example.com",
+    "2": "email@subdomain.example.com",
+    "3": "firstname+lastname@example.com",
+    "4": "email@123.123.123.123",
+    "5": "email@[123.123.123.123]",
+    "6": "'email'@example.com",
+    "7": "1234567890@example.com",
+    "8": "email@example-one.com",
+    "9": "_______@example.com",
+    "10": "email@example.name",
+    "11": "email@example.museum",
+    "12": "email@example.co.jp",
+    "13": "firstname-lastname@example.com",
+    "14": "much.'more\\ unusual'@example.com",
+    "15": "very.unusual.”@”.unusual.com@example.com",
+    "16": "very.'(),:;<>[]'.VERY.'very@\\ 'very'.unusual@strange.example.com"
+  },
+  "invalidEmails": {
+    "0": "plainaddress",
+    "1": "plain",
+    "2": "@example.com",
+    "3": "Joe Smith <email@example.com>",
+    "4": "email.example.com",
+    "5": "email@example@example.com",
+    "6": ".email@example.com",
+    "7": "email.@example.com",
+    "8": "email..email@example.com",
+    "9": "emailll..email@example.com",
+    "10": "email@example.com (Joe Smith)",
+    "11": "email@example",
+    "12": "email@-examplecom",
+    "13": "email@example.",
+    "14": "email@111.222.333.44444",
+    "15": "email@example..com",
+    "16": "Abc..123@example.com",
+    "17": "'(),:;<>[\\]@example.com",
+    "18": "just\"not\"right@example.com"
+  },
+  "leapYear": {
+    "0": "29",
+    "1": "30",
+    "2": "31",
+    "3": "2000",
+    "4": "2001",
+    "5": "2002",
+    "6": "2003"
+  },
+  "twoOfTwenty": {
+    "0": "Not at all",
+    "1": "A little",
+    "2": "Somewhat",
+    "3": "Much",
+    "4": "Very much"
+  },
+  "fourOfTwenty": {
+    "0": "Yes",
+    "1": "No",
+    "2": "Not sure"
+  },
+  "fiveOfTwenty": {
+    "0": "No, I'm not taking any right now",
+    "1": "I take them sometimes, but not often",
+    "2": "I rely on them most nights"
+  },
+  "eightOfTwenty": {
+    "0": "Not at all",
+    "1": "Several days",
+    "2": "More than half the days",
+    "3": "Nearly every day"
+  },
+  "twelveOfTwenty": {
+    "0": "Never",
+    "1": "Almost never",
+    "2": "Sometimes",
+    "3": "Fairly often",
+    "4": "Very often"
+  },
+  "thirteenOfTwenty": {
+    "0": "Yes",
+    "1": "No",
+    "2": "Maybe"
+  },
+  "fourteenOfTwenty": {
+    "0": "Employed full-time",
+    "1": "Employed part-time",
+    "2": "Retired",
+    "3": "Unemployed",
+    "4": "Full-time student",
+    "5": "Full-time homemaker or carer"
+  },
+  "fifteenOfTwenty": {
+    "0": "No",
+    "1": "Yes"
+  },
+  "seventeenOfTwenty": {
+    "0": "100%-Unable to work",
+    "1": "90%",
+    "2": "80%",
+    "3": "70%",
+    "4": "60%",
+    "5": "50%",
+    "6": "40%",
+    "7": "30%",
+    "8": "20%",
+    "9": "10%",
+    "10": "0% - No effect"
+  }
+}
