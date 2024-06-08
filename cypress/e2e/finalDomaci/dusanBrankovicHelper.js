@@ -85,6 +85,34 @@ class Helper {
     cy.get("div").contains("Checkout").parent().click();
   }
 
+  addEntry() {
+    for (let i = 0; i < 4; i++) {
+      if (i > 1) {
+        cy.get('div[role="dialog"]')
+          .should("be.visible")
+          .find(".MuiDialogContent-root")
+          .scrollTo("bottom", { force: true });
+        cy.get(
+          'svg path[d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1zm0 2c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 4c.513 0 .936.386.993.883L13 8v3h3c.552 0 1 .448 1 1 0 .513-.386.936-.883.993L16 13h-3v3c0 .552-.448 1-1 1-.513 0-.936-.386-.993-.883L11 16v-3H8c-.552 0-1-.448-1-1 0-.513.386-.936.883-.993L8 11h3V8c0-.552.448-1 1-1z"]'
+        ).as("add");
+        cy.get("@add").should("exist").click({ force: true });
+        cy.get("svg")
+          .find(
+            'path[d="M14 1c1.598 0 2.904 1.249 2.995 2.824L17 4v1h4c.552 0 1 .448 1 1 0 .513-.386.936-.883.993L21 7h-1v13c0 1.598-1.249 2.904-2.824 2.995L17 23H7c-1.598 0-2.904-1.249-2.995-2.824L4 20V7H3c-.552 0-1-.448-1-1 0-.513.386-.936.883-.993L3 5h4V4c0-1.598 1.249-2.904 2.824-2.995L10 1h4zM6 7v13c0 .513.386.936.883.993L7 21h10c.513 0 .936-.386.993-.883L18 20V7H6zm8-4h-4c-.513 0-.936.386-.993.883L9 4v1h6V4c0-.513-.386-.936-.883-.993L14 3z"]'
+          )
+          .should("have.length", i + 2);
+      } else {
+        cy.get("svg title").contains("Add entry").as("add");
+        cy.get("@add").should("exist").click({ force: true });
+        cy.get("svg")
+          .find(
+            'path[d="M14 1c1.598 0 2.904 1.249 2.995 2.824L17 4v1h4c.552 0 1 .448 1 1 0 .513-.386.936-.883.993L21 7h-1v13c0 1.598-1.249 2.904-2.824 2.995L17 23H7c-1.598 0-2.904-1.249-2.995-2.824L4 20V7H3c-.552 0-1-.448-1-1 0-.513.386-.936.883-.993L3 5h4V4c0-1.598 1.249-2.904 2.824-2.995L10 1h4zM6 7v13c0 .513.386.936.883.993L7 21h10c.513 0 .936-.386.993-.883L18 20V7H6zm8-4h-4c-.513 0-.936.386-.993.883L9 4v1h6V4c0-.513-.386-.936-.883-.993L14 3z"]'
+          )
+          .should("have.length", i + 2);
+      }
+    }
+  }
+
   projectActivityCheck(projectSelector, activitySelector, x, y, n, m) {
     cy.fixture("dbfinal").then((data) => {
       cy.get(`#${projectSelector}`)
