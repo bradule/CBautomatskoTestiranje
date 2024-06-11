@@ -138,6 +138,7 @@ class Helper {
       .should("not.exist");
 
     // GIT TEST//
+    //ovo je provera//
   }
 
   projectActivityCheck(projectSelector, activitySelector, x, y, n, m) {
