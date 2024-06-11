@@ -1,0 +1,377 @@
+Za završni rad ćete testirati aplikaciju koju svakodnevno koristite i trebalo bi da dobro poznajete - Checker. Na sledećoj adresi:  http://10.15.1.102/login nalazi se testna verzija checkera na kojoj ćete raditi zadatak. Za logovanje koristite svoje standardne LDAP naloge - logujete se isto kao i na običan checker. 
+Zadatak je sledeći:
+    Napišite automatski test koji će pokriti ceo proces "Check in"-a i "Check out"-a na checkin strani i svim stranama na koje to utiče. 
+     Vaš zadatak je da osmislite šta je sve potrebno testirati i da napišete Automatske testove za test case-ve koje osmislite. Nije potrebno pisati test caseve u posebnom dokumentu, već u zaglavlju svakog testa. Npr: 
+
+    
+        /*
+        Automated test that checks happy path of Send request button
+        PreReq. User is on the checkin page, and there is at least one row in the check in table
+         Steps:
+            1. Click on the first send change request button
+            2. Type sample text
+            3. click send request
+            4. go to /requests page
+            5. assert if there is a new row in the table
+            6. assert if all the data of the new row is correct
+        */
+
+      it("Send request - happy path", () => {
+          kod testa
+        })
+    
+   Bonus zadatak je da istestirate proces prijavljivanja odmora, kolko god vam rola korisnika dozvoljava. Tokom testova koristite sve što smo prošli na kursu, a možete koristiti i druge stvari ako vam budu potrebne.
+   
+Završne radove upakujte u zip arhivu, ceo projekat, bez node module foldera, i pošaljite na adrese: 
+dmiladinovic@itekako.com
+mjankucic@itekako.com
+skovacevic@itekako.com
+     
+
+1. Logovanje
+1.1 Happy path
+    1.1.1. Visit Checker
+    1.1.2. Click on Username field
+    1.1.3. Enter correct username (my username)
+    1.1.4. Click on Password field
+    1.1.5. Enter password for entered username
+    1.1.6. Click on "Log in" button 
+    1.1.7. Assert if correct user is logged in
+Checkin
+1.2 Correct but not corresponding username and password
+    1.2.1. Visit Checker
+    1.2.2. Click on Username field 
+    1.2.3. Enter correct username (e.g. dmiladinovic)
+    1.2.4. Click on Password field
+    1.2.5. Enter correct password for another username (e.g. my password)
+    1.2.6. Click on "Log in" button 
+    1.2.7. Assert if user is logged in
+
+1.3. Correct username, wrong password
+    1.3.1 Visit Checker
+    1.3.2. Click on Username
+    1.3.3. Enter correct username (my username)
+    1.3.4. Click on Password field
+    1.3.5. Enter wrong password (e.g. change one letter in my password)
+    1.3.6. Click on "Log in" button 
+    1.3.7. Assert if user is logged in
+
+
+1.4. Wrong username, correct password
+    1.4.1 Visit Checker
+    1.4.2. Click on Username
+    1.4.3. Enter wrong username (my username with added on letter)
+    1.4.4. Click on Password field
+    1.4.5. Enter correct password (my password)
+    1.4.6. Click on "Log in" button 
+    1.4.7. Assert if user is logged in
+
+1.5. Wrong username, wrong password
+    1.5.1 Visit Checker
+    1.5.2. Click on Username
+    1.5.3. Enter wrong username (my username with added on letter)
+    1.5.4. Click on Password field
+    1.5.5. Enter wrong password (my password with added on letter)
+    1.5.6. Click on "Log in" button 
+    1.5.7. Assert if user is logged in
+
+2. Check in
+2.1. Visit checker
+2.2. Log in
+2.3. Click on Check in button
+2.4. Assert if user is checked in
+    2.4.1. Assert if Check in button has changed state
+    2.4.2. Assett if Office / Remote icons have changed state (turned on)
+    2.4.3. Assert if "You can stop counter in first 60 seconds without entering checkout entries." button
+           has appeared
+    2.4.4. Assert if User has appeard on "Who is online page" as checked in (green)
+    2.4.5. Assert if User on "Who is online" page has gotten icon for Office / Remote
+
+3. Check out
+3.1. Check out inside 60 seconds
+    3.1.1. Click on Check out inside 60 seconds button
+    3.1.2. Check that user is shecked out
+        3.1.2.1. Assert if Check in button has changed state
+        3.1.2.2. Assett if Office / Remote icons have changed state (turned off)
+        3.1.2.3. Assert if "You can stop counter in first 60 seconds without entering checkout entries." button has disappeared
+        3.1.2.4. Assert if User has appeard on "Who is online page" as not checked in (black)
+        3.1.2.5. Assert if User on "Who is online" page does not have icon for Office / Remote
+
+3.2. Checkout after 60 seconds happy path
+    3.2.1. Take the number of rows
+    3.2.2. Click on Checkout button
+    3.2.3. Select project
+    3.2.4. Enter description
+    3.2.5. Click check out
+    3.2.6. Check number of rows and if new entries are there
+
+2.2 Checkout after 60 seconds
+    2.2.1. Check X and Cancel buttons (also checking modal aperance)
+    2.2.2. Check Project
+            - project X button
+            - project arrow
+            - project clear
+            - project type something
+            - existing or not
+            - type something random
+    2.2.3. Check Activity
+            - Activity X button
+            - Activity arrow
+            - Activity clear
+            - Activity type something
+            - existing or not
+            - type something random
+     2.2.4. Check Description
+            - 1-500 char
+     2.2.5. Check if hours match 
+     2.2.6. + button
+     2.2.7. Use previous session button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+imenovanje argumenata
+
+then moze da vrati drugaciju vrednost od ulazne
+cy.log
+each
+
+selector za gresku
+data-testid="error-message-component"
+Selector za Mesec
+id="birth-month"
+Selector za dan 
+id="birth-day"
+Selector za godinu
+id="birth-year"
+
+Proveri prestupne godine
+
+sectionTwo() {
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="select-dropdown"]').select(1);
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="select-dropdown"]').select(1);
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-checkbox"]').eq(1).check();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-checkbox"]').eq(1).check();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get("#birth-month").type(1);
+    cy.get("#birth-day").type(1);
+    cy.get("#birth-year").type(2000);
+    this.buttonClick("Continue");
+    this.inputEmail();
+    cy.get("#sleep_efficiency_time_into_bed").select(1);
+    cy.get("#sleep_efficiency_time_try_to_sleep").select(1);
+    cy.get("#sleep_efficiency_to_fall_asleep_total_time").select(1);
+    cy.get("#sleep_efficiency_awakenings_in_night").select(1);
+    cy.get("#sleep_efficiency_time_final_awakening").select(1);
+    cy.get("#earlier_intended_wake_up").select(1);
+    cy.get("#sleep_efficiency_time_get_out_of_bed").select(1);
+    cy.get("#sleep_efficiency_sleep_quality").select(1);
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="select-dropdown"]').select(1);
+    this.buttonClick("Continue");
+    cy.get('[data-testid="select-dropdown"]').select(1);
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="select-dropdown"]').select(1);
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-radio-div"]').eq(1).click();
+    this.buttonClick("Continue");
+    cy.get('[data-testid="select-dropdown"]').select(1);
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-number-text"]').type('1')
+    this.buttonClick("Continue");
+    cy.get('[data-testid="question-input-text"]').type('kajshfkjhajsdhfj')
+    this.buttonClick("Continue");
+  }
+
+  within()
+  its()
+  invoke()
+  kovalenko real events za hover
+
+  GET i POS>t, intercept...
+  where am i Office true
+
+
+    checkHomeOrOffice() {
+    cy.intercept({
+      method: "POST",
+      url: "http://10.15.1.102/api/sessions/",
+    }).as("user");
+    cy.get("button")
+      .contains(/Check In/)
+      .click();
+    cy.wait("@user").then(() => {
+      cy.get(
+        'path[d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"]'
+      ).eq(0);
+      // cy.wrap(el).its("response.body[start_from_office]") === "true"
+      //   ? cy
+      //       .get(
+      //         'path[d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"]'
+      //       )
+      //       .eq(0)
+      //       .should("have.css", "fill", "rgb(51, 204, 153)")
+      //   : cy
+      //       .get(
+      //         'path[d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z"]'
+      //       )
+      //       .eq(0)
+      //       .should("have.css", "fill", "rgb(51, 204, 153)");
+    });
+  }
+  // checkHomeOrRemote() {
+
+  //   //cy,get('svg[title="Remote work"]).then...
+  //   cy.get(
+  //     'path[d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z"]'
+  //   )
+  //     .eq(0)
+  //     .then(($icon) => {
+  //       if ($icon.has("fill", "rgb(51, 204, 153)")) {
+  //         cy.get(
+  //           'path[d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"]'
+  //         ).should("have.css", "fill", "rgb(97, 97, 97)");
+  //         cy.visit("http://10.15.1.102/active/who-is-online");
+  //         cy.get("div")
+  //           .contains("Dušan Branković")
+  //           .parent()
+  //           .parent()
+  //           .find("svg")
+  //           .should("exist");
+  //         cy.get('img[alt="itk"]').click();
+  //       } else {
+  //         $icon.should("have.css", "fill", "rgb(97, 97, 97)");
+  //         cy.visit("http://10.15.1.102/active/who-is-online");
+  //         cy.get("#div")
+  //           .contains("Dušan Branković")
+  //           .parent()
+  //           .parent()
+  //           .find("svg")
+  //           .should("exist");
+  //         cy.get('img[alt="itk"]').click();
+  //       }
+  //     });
+  // }
+
+
+  //*[@id="root"]/div/main/div/div[2]/div/div[3]/div[10]/svg
+  /html/body/div/div/main/div/div[2]/div/div[3]/div[10]/svg/path
+
+
+
+  "project": {
+    "0": "LTSE - Captable",
+        "activity": {
+    "0": "Development",
+    "1": "DevOps",
+    "2": "Research",
+    "3": "Meeting",
+    "4": "Management"
+  },
+    "1": "Kryptovert",
+    "2": "Itekako - Career Ladder",
+    "3": "Itekako - Checker",
+    "4": "FV - InterVu",
+    "5": "FV - Encoder",
+            "activity": {
+    "0": "DevOps",
+    "1": "Research",
+    "2": "Meeting",
+    "3": "Management"
+    "4": "Development",
+  },
+    "6": "BC - Betting Expert",
+    "7": "BC - KittyGlitter",
+    "8": "BC - WP Migration",
+    "9": "Atlas - PARS",
+    "10": "Burda",
+    "11": "CoinBase",
+    "12": "Big Health",
+    "13": "Atlas - Sharepoint",
+    "14": "Atlas - Pumpe",
+    "15": "Banovo",
+    "16": "Blockparty",
+    "17": "Atlas - Controller",
+    "18": "Atlas - BIS(Bacon)",
+    "19": "Fairlo",
+    "20": "OpenComp",
+    "21": "Toolchain",
+    "22": "Doremir",
+    "23": "Atlas - Hybris",
+    "24": "Itekako - Sajt",
+    "25": "Atlas - Product Usage Analysis Tool",
+    "26": "Atlas - CMS",
+    "27": "Atlas - SoundAnalyzer",
+    "28": "EBF",
+    1
+    "29": "LTSE - Excange",
+         "0": "Resarch",
+         "1": "Meeting"
+         "2": "Department work"
+         "3": "Finance"
+         "4": "Recruitment"
+         "5": "Backoffice"
+         "6": "Business trip"
+    "30": "Office",
+         "0": "Resarch",
+         "1": "Meeting"
+         "2": "Department work"
+         "3": "Finance"
+         "4": "Recruitment"
+         "5": "Backoffice"
+    "31": "aegbvafeaf",
+      "0": "DevOps", 
+    "32": "test"
+      "0": "DevOps",
+         "1": "Biirthday"
+         "2": "religious holiday"
+  },
