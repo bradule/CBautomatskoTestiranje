@@ -88,8 +88,8 @@ describe("Logging in", () => {
     cy.get('button[type="submit"]').click();
     // OBRISI OVO IZNAD
     // helper.checkedLongetThanSixty();
-    // helper.cancelXCheck();
-    // helper.addEntry();
+    helper.cancelXCheck();
+    helper.addEntry();
     helper.addLastEntry()
     //uraditi i brisanje
     // cy.get('path[d="M7 10l5 5 5-5z"]').eq(0).click();
