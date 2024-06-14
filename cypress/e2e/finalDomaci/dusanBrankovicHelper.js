@@ -140,70 +140,23 @@ class Helper {
     cy.get("button").contains("Cancel").click({ force: true });
   }
 
-  addLastEntry() {
+  addLastEntry(selector, n) {
     cy.get("div").contains("Checkout").parent().click();
     cy.get("button").contains("Cancel").click({ force: true });
     cy.get("table svg").eq(3).click();
     cy.get("tbody")
       .eq(1)
       .find("td")
-      .eq(0)
+      .eq(n)
       .invoke("text")
-      .then((firstValue) => {
+      .then((value) => {
         cy.get("div").contains("Checkout").parent().click();
         cy.get("svg title")
           .contains("Use entries from the previous session")
           .click({ force: true });
-        cy.get("#project").invoke("val").should("eq", firstValue);
+        cy.get(`${selector}`).eq(0).invoke("val").should("eq", value);
         cy.get("button").contains("Cancel").click({ force: true });
       });
-    cy.get("tbody")
-      .eq(1)
-      .find("td")
-      .eq(1)
-      .invoke("text")
-      .then((firstValue) => {
-        cy.get("div").contains("Checkout").parent().click();
-        cy.get("svg title")
-          .contains("Use entries from the previous session")
-          .click({ force: true });
-        cy.get("button").contains("Cancel").click({ force: true });
-      });
-    cy.get("tbody")
-      .eq(1)
-      .find("td")
-      .eq(3)
-      .invoke("text")
-      .then((firstValue) => {
-        cy.get("div").contains("Checkout").parent().click();
-        cy.get("svg title")
-          .contains("Use entries from the previous session")
-          .click({ force: true });
-        cy.get("textarea").eq(0).invoke("val").should("eq", firstValue);
-        cy.get("button").contains("Cancel").click({ force: true }); //go back to homescreen
-      });
-    // cy.get("tbody").eq(1).find("td").eq(1).invoke("text").as("activity");
-    // cy.get("tbody").eq(1).find("td").eq(3).invoke("text").as("description");
-    // cy.get("div").contains("Checkout").parent().click();
-    // cy.get("svg title")
-    //   .contains("Use entries from the previous session")
-    //   .click({ force: true });
-    // // cy.get("#project").invoke("text").should("be.equal", "@project");
-    // cy.get("#project").invoke("val").as("text");
-    // cy.get("@text").should("eq", "@project");
-
-    // .then(() => {
-    //   cy.get("svg title")
-    //     .contains("Use entries from the previous session")
-    //     .click({ force: true })
-    //     .then(() => {
-    //       // cy.get("#project").invoke("text").should("be.equal", "@project");
-    //       cy.get("#project").invoke("val").as("text").then(()=>{
-    //         cy.get("@text").should("eq", "@project")
-    //       });
-
-    //     });
-    // });
   }
 
   projectActivityCheck(projectSelector, activitySelector, x, y, n, m) {
