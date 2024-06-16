@@ -375,3 +375,23 @@ sectionTwo() {
          "1": "Biirthday"
          "2": "religious holiday"
   },
+
+
+   addLastEntry2(selector, n) {
+    cy.get("div").contains("Checkout").parent().click();
+    cy.get("button").contains("Cancel").click({ force: true });
+    cy.get("table svg").eq(3).click();
+    cy.get("tbody")
+      .eq(1)
+      .find("td")
+      .eq(n)
+      .invoke("text")
+      .then((value) => {
+        cy.get("div").contains("Checkout").parent().click();
+        cy.get("svg title")
+          .contains("Use entries from the previous session")
+          .click({ force: true });
+        cy.get(`#${selector}`).eq(0).invoke("val").should("eq", value);
+        cy.get("button").contains("Cancel").click({ force: true });
+      });
+  }

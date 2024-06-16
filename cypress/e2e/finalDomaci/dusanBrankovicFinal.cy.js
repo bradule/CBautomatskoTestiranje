@@ -14,7 +14,7 @@ describe("Logging in", () => {
   });
   //Automated test that is checking if user is logged in but not already checked in
   // 1. Assert that Check in button exists, is visible and "Check in" is displayed
-  // 2. Assert if user er is on Who is online page but not active, checked in
+  // 2. Assert if user is on Who is online page but not active, checked in
   // 3. Assert if user is logged in but not checked in
   it("Check if logged in not active", () => {
     cy.get("button")
@@ -106,7 +106,7 @@ describe("Logging in", () => {
     // helper.timesMatch();
     // cy.get("p").contains("Required").should("exist").and("be.visible");
     // helper.enterString(501);
-    // cy.get("p")
+    // cy.get("p"), 
     //   .contains("Must be less than 500 characters")
     //   .should("exist")
     //   .and("be.visible");
