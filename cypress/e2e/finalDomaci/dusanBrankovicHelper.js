@@ -225,22 +225,23 @@ class Helper {
       });
   }
   enterString(length) {
-    cy.get("div")
-      .contains("Description")
-      .parent()
-      .find("textarea")
+    // cy.get("div")
+    //   .contains("Description")
+    //   .parent()
+    cy.get("textarea")
       .eq(0)
       .then((el) => {
         cy.wrap(el).type(this.createString(length), { delay: 0 });
       });
   }
+
+  clearEntry() {
+    cy.get("button[title=Clear]").eq(1).click({ force: true });
+    cy.get("button[title=Clear]").eq(0).click({ force: true });
+    cy.get("textarea").eq(0).clear();
+  }
   clearDescription() {
-    cy.get("div")
-      .contains("Description")
-      .parent()
-      .find("textarea")
-      .eq(0)
-      .clear();
+    cy.get("textarea").eq(0).clear();
   }
   createTestString() {
     let string = "bradule" + Date.now();
@@ -311,17 +312,11 @@ class Helper {
   }
 
   checkTableEntries() {
-    cy.get("div")
-      .contains("Description")
-      .parent()
-      .find("textarea")
+    cy.get("textarea")
       .eq(0)
       .then(() => {
         let string = this.createTestString();
-        cy.get("div")
-          .contains("Description")
-          .parent()
-          .find("textarea")
+        cy.get("textarea")
           .eq(0)
           .type(string);
         cy.get("button").contains("Checkout").click();

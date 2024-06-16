@@ -82,50 +82,52 @@ describe("Logging in", () => {
   //     2.4.10. Assert if data entered has appeared in table
 
   it.only("Check in > 60s", () => {
-    cy.visit("http://10.15.1.102/login");
-    cy.get('input[name="username"]').type(Cypress.env("username"));
-    cy.get('input[name="password"]').type(Cypress.env("password"));
-    cy.get('button[type="submit"]').click();
+    // cy.visit("http://10.15.1.102/login");
+    // cy.get('input[name="username"]').type(Cypress.env("username"));
+    // cy.get('input[name="password"]').type(Cypress.env("password"));
+    // cy.get('button[type="submit"]').click();
     // OBRISI OVO IZNAD
-    // helper.checkedLongetThanSixty();
+    helper.checkedLongetThanSixty();
     helper.cancelXCheck();
     helper.addEntry();
     helper.addLastEntry("#project", 0);
     helper.addLastEntry("#activity", 1);
     helper.addLastEntry("textarea", 3);
     //uraditi i brisanje
-    // cy.get('path[d="M7 10l5 5 5-5z"]').eq(0).click();
+    cy.get("div").contains("Checkout").parent().click({ force: true });
+    helper.clearEntry();
+    cy.get('path[d="M7 10l5 5 5-5z"]').eq(0).click();
     // helper.projectActivityCheck("project", "activity", 0, 5, 5, 0);
-    // helper.projectActivityCheck("project", "activity", 5, 6, 5, 1);
+    helper.projectActivityCheck("project", "activity", 5, 6, 5, 1);
     // helper.projectActivityCheck("project", "activity", 6, 28, 5, 0);
     // helper.projectActivityCheck("project", "activity", 28, 29, 5, 1);
     // helper.projectActivityCheck("project", "activity", 29, 30, 7, 2);
     // helper.projectActivityCheck("project", "activity", 30, 31, 6, 3);
     // helper.projectActivityCheck("project", "activity", 31, 32, 1, 4);
     // helper.projectActivityCheck("project", "activity", 32, 33, 3, 5);
-    // helper.enterDropdown("project");
-    // cy.get('path[d="M7 10l5 5 5-5z"]').eq(1).click();
-    // helper.enterDropdown("activity");
-    // helper.timesMatch();
-    // cy.get("p").contains("Required").should("exist").and("be.visible");
-    // helper.enterString(501);
-    // cy.get("p"), 
-    //   .contains("Must be less than 500 characters")
-    //   .should("exist")
-    //   .and("be.visible");
-    // helper.clearDescription();
-    // helper.enterString(1);
-    // cy.get("p")
-    //   .contains("Must be less than 500 characters")
-    //   .should("not.exist");
-    // helper.clearDescription();
-    // cy.get("button[title=Clear]").eq(1).click({ force: true });
-    // cy.get("button[title=Clear]").eq(0).click({ force: true });
-    // cy.get('path[d="M7 10l5 5 5-5z"]').eq(0).click();
-    // helper.enterDropdown("project");
-    // cy.get('path[d="M7 10l5 5 5-5z"]').eq(1).click();
-    // helper.enterDropdown("activity");
-    // helper.checkTableEntries();
+    helper.enterDropdown("project");
+    cy.get('path[d="M7 10l5 5 5-5z"]').eq(1).click();
+    helper.enterDropdown("activity");
+    helper.timesMatch();
+    cy.get("p").contains("Required").should("exist").and("be.visible");
+    helper.enterString(501);
+    cy.get("p")
+      .contains("Must be less than 500 characters")
+      .should("exist")
+      .and("be.visible");
+    helper.clearDescription();
+    helper.enterString(1);
+    cy.get("p")
+      .contains("Must be less than 500 characters")
+      .should("not.exist");
+    helper.clearDescription();
+    cy.get("button[title=Clear]").eq(1).click({ force: true });
+    cy.get("button[title=Clear]").eq(0).click({ force: true });
+    cy.get('path[d="M7 10l5 5 5-5z"]').eq(0).click();
+    helper.enterDropdown("project");
+    cy.get('path[d="M7 10l5 5 5-5z"]').eq(1).click();
+    helper.enterDropdown("activity");
+    helper.checkTableEntries();
   });
   //Automation test to check if correct number of days is displayed
   // 1. Get number of days from table (number of unique dates
