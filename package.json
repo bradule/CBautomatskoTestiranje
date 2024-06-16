@@ -1,10 +1,6 @@
 {
   "name": "qakurs",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "description": "",
-=======
->>>>>>> 0de5ec54b7627b21064d0c2c40b16b558034c8e9
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,10 +15,5 @@
     "cypress-real-events": "^1.12.0",
     "mochawesome-merge": "^4.3.0",
     "mochawesome-report-generator": "^6.2.0"
-<<<<<<< HEAD
   }
-=======
-  },
-  "description": ""
->>>>>>> 0de5ec54b7627b21064d0c2c40b16b558034c8e9
 }
