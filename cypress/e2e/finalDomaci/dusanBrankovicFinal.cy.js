@@ -90,12 +90,6 @@ describe("Logging in", () => {
     // helper.checkedLongetThanSixty();
     helper.cancelXCheck();
     helper.addEntry();
-<<<<<<< HEAD
-=======
-    helper.addLastEntry("#project", 0);
-    helper.addLastEntry("#activity", 1);
-    helper.addLastEntry("textarea", 3);
->>>>>>> 0de5ec54b7627b21064d0c2c40b16b558034c8e9
     //uraditi i brisanje
     // cy.get('path[d="M7 10l5 5 5-5z"]').eq(0).click();
     // helper.projectActivityCheck("project", "activity", 0, 5, 5, 0);

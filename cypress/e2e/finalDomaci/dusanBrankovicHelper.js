@@ -82,18 +82,10 @@ class Helper {
     cy.get("button").contains("Cancel").click();
     cy.get("div").contains("Checkout").parent().click();
     cy.get("div").contains("Session checkout").parent().find("button").click();
-<<<<<<< HEAD
     cy.get("div").contains("Checkout").parent().click();
   }
 
   addEntry() {
-=======
-    // cy.get("div").contains("Checkout").parent().click();
-  }
-
-  addEntry() {
-    cy.get("div").contains("Checkout").parent().click();
->>>>>>> 0de5ec54b7627b21064d0c2c40b16b558034c8e9
     for (let i = 0; i < 4; i++) {
       if (i > 1) {
         cy.get('div[role="dialog"]')
@@ -144,29 +136,6 @@ class Helper {
         ' path[d="M14 1c1.598 0 2.904 1.249 2.995 2.824L17 4v1h4c.552 0 1 .448 1 1 0 .513-.386.936-.883.993L21 7h-1v13c0 1.598-1.249 2.904-2.824 2.995L17 23H7c-1.598 0-2.904-1.249-2.995-2.824L4 20V7H3c-.552 0-1-.448-1-1 0-.513.386-.936.883-.993L3 5h4V4c0-1.598 1.249-2.904 2.824-2.995L10 1h4zM6 7v13c0 .513.386.936.883.993L7 21h10c.513 0 .936-.386.993-.883L18 20V7H6zm8-4h-4c-.513 0-.936.386-.993.883L9 4v1h6V4c0-.513-.386-.936-.883-.993L14 3z"]'
       )
       .should("not.exist");
-<<<<<<< HEAD
-=======
-    cy.get("button").contains("Cancel").click({ force: true });
-  }
-
-  addLastEntry(selector, n) {
-    cy.get("div").contains("Checkout").parent().click();
-    cy.get("button").contains("Cancel").click({ force: true });
-    cy.get("table svg").eq(3).click();
-    cy.get("tbody")
-      .eq(1)
-      .find("td")
-      .eq(n)
-      .invoke("text")
-      .then((value) => {
-        cy.get("div").contains("Checkout").parent().click();
-        cy.get("svg title")
-          .contains("Use entries from the previous session")
-          .click({ force: true });
-        cy.get(`${selector}`).eq(0).invoke("val").should("eq", value);
-        cy.get("button").contains("Cancel").click({ force: true });
-      });
->>>>>>> 0de5ec54b7627b21064d0c2c40b16b558034c8e9
   }
 
   projectActivityCheck(projectSelector, activitySelector, x, y, n, m) {
