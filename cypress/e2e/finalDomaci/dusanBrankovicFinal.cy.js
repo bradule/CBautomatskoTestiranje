@@ -81,7 +81,7 @@ describe("Logging in", () => {
   //     2.4.9. Check out
   //     2.4.10. Assert if data entered has appeared in table
 
-  it.only("Check in > 60s", () => {
+  it("Check in > 60s", () => {
     // cy.visit("http://10.15.1.102/login");
     // cy.get('input[name="username"]').type(Cypress.env("username"));
     // cy.get('input[name="password"]').type(Cypress.env("password"));
