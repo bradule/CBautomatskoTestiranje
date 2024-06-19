@@ -45,6 +45,7 @@ describe("Logging in", () => {
   });
 
   it("Check in > 60s", () => {
+    //CODE TO TEST WHEN LOGGED IN
     // cy.visit("http://10.15.1.102/login");
     // cy.get('input[name="username"]').type(Cypress.env("username"));
     // cy.get('input[name="password"]').type(Cypress.env("password"));
@@ -56,7 +57,6 @@ describe("Logging in", () => {
     helper.addLastEntry("#project", 0);
     helper.addLastEntry("#activity", 1);
     helper.addLastEntry("textarea", 3);
-    //uraditi i brisanje
     cy.get("div").contains("Checkout").parent().click({ force: true });
     helper.clearEntry();
     cy.get('path[d="M7 10l5 5 5-5z"]').eq(0).click();

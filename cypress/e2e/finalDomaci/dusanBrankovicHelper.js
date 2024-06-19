@@ -316,9 +316,7 @@ class Helper {
       .eq(0)
       .then(() => {
         let string = this.createTestString();
-        cy.get("textarea")
-          .eq(0)
-          .type(string);
+        cy.get("textarea").eq(0).type(string);
         cy.get("button").contains("Checkout").click();
         cy.wait(3000);
         cy.get("button")
