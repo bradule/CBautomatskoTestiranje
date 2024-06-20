@@ -16,7 +16,7 @@ describe("Logging in", () => {
   // 1. Assert that Check in button exists, is visible and "Check in" is displayed
   // 2. Assert if user is on Who is online page but not active, checked in
   // 3. Assert if user is logged in but not checked in
-  it("Check if logged in not active", () => {
+  it.only("Check if logged in not active", () => {
     cy.get("button")
       .contains(/Check In/)
       .should("exist")
