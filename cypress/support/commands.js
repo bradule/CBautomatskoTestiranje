@@ -26,6 +26,8 @@
 import "cypress-real-events";
 
 Cypress.Commands.add("LOGIN_CHECKER", () => {
+
+cy.session('login', ()=>{
   cy.visit("http://10.15.1.102/login");
   cy.get('input[name="username"]').type(Cypress.env("username"));
   cy.get('input[name="password"]').type(Cypress.env("password"));
@@ -37,19 +39,20 @@ Cypress.Commands.add("LOGIN_CHECKER", () => {
   cy.wait("@loginData")
     .its("response.body[username]")
     .should("eq", "dbrankovic");
-  // cy.request({
+})
+
+  // cy.visit("http://10.15.1.102/login");
+  // cy.get('input[name="username"]').type(Cypress.env("username"));
+  // cy.get('input[name="password"]').type(Cypress.env("password"));
+  // cy.intercept({
   //   method: "POST",
   //   url: "http://10.15.1.102/api/auth/login/",
-  //   body: {
-  //     username: Cypress.env("username"),
-  //     password: Cypress.env("password"),
-  //   },
-  // })
-  //   .as("loginData")
-  //   .then((response) => {
-  //     expect(response.status).to.eq(200);
-  //     expect(response.body['username']).to.eq("dbrankovic");
-  //   });
+  // }).as("loginData");
+  // cy.get('button[type="submit"]').click();
+  // cy.wait("@loginData")
+  //   .its("response.body[username]")
+  //   .should("eq", "dbrankovic");
+  
 });
 
 Cypress.Commands.add("getInputName", (nameSelector) => {

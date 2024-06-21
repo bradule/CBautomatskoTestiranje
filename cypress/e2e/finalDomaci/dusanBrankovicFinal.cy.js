@@ -16,7 +16,8 @@ describe("Logging in", () => {
   // 1. Assert that Check in button exists, is visible and "Check in" is displayed
   // 2. Assert if user is on Who is online page but not active, checked in
   // 3. Assert if user is logged in but not checked in
-  it.only("Check if logged in not active", () => {
+  it("Check if logged in not active", () => {
+    cy.visit("http://10.15.1.102/");
     cy.get("button")
       .contains(/Check In/)
       .should("exist")
@@ -36,6 +37,7 @@ describe("Logging in", () => {
   //2. Assert if user is checked in
   //3. Assert if check in < 60 seconds option exist
   it("CheckIn", () => {
+    cy.visit("http://10.15.1.102/");
     cy.intercept({
       method: "POST",
       url: "http://10.15.1.102/api/sessions/",
@@ -64,6 +66,7 @@ describe("Logging in", () => {
   //     2.4.4. Assert if User has appeard on "Who is online page" as checked in (green)
   //     2.4.5. Assert if User on "Who is online" page has gotten icon for Office / Remote
   it("Location", () => {
+    cy.visit("http://10.15.1.102/");
     helper.checkHomeRemote();
   });
   //Automation test for check out - checking out after 60 seconds
@@ -87,6 +90,7 @@ describe("Logging in", () => {
     // cy.get('input[name="password"]').type(Cypress.env("password"));
     // cy.get('button[type="submit"]').click();
     // OBRISI OVO IZNAD
+    cy.visit("http://10.15.1.102/");
     helper.checkedLongetThanSixty();
     helper.cancelXCheck();
     helper.addEntry();
@@ -134,6 +138,7 @@ describe("Logging in", () => {
   // 2. Assert if number of days displayed in Total days is correct and mathces number of unique dates
   // 3. Assert if number of days displayed in Office | Remote add up to Total days, is correct and mathces number of unique dates
   it("Number of days, Remote & Office", () => {
+    cy.visit("http://10.15.1.102/");
     cy.wait(3000);
     cy.get("table").then(($table) => {
       let dates = [];
@@ -183,6 +188,7 @@ describe("Logging in", () => {
     });
   });
   it("Check if logged in, not active", () => {
+    cy.visit("http://10.15.1.102/");
     cy.get("button")
       .contains(/Check In/)
       .should("exist");
