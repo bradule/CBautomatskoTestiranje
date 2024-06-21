@@ -200,4 +200,8 @@ describe("Logging in", () => {
     cy.get('img[alt="itk"]').click();
     console.log("Logged in, not active");
   });
+
+  it('Request absence', () =>{
+    cy.visit("http://10.15.1.102/");
+  })
 });

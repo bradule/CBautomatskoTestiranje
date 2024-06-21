@@ -318,7 +318,7 @@ class Helper {
         let string = this.createTestString();
         cy.get("textarea").eq(0).type(string);
         cy.get("button").contains("Checkout").click();
-        cy.wait(3000);
+        cy.wait(2000);
         cy.get("button")
           .find(
             'path[d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"]'
