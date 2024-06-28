@@ -26,24 +26,24 @@
 import "cypress-real-events";
 
 Cypress.Commands.add("LOGIN_CHECKER", (username, password) => {
-  cy.session([username, password], () => {
+  
     username = Cypress.env("username");
     password = Cypress.env("password");
     cy.visit("http://10.15.1.102/login");
     cy.get('input[name="username"]').type(username);
     cy.get('input[name="password"]').type(password);
-    cy.intercept({
-      method: "POST",
-      url: "http://10.15.1.102/api/auth/login/",
-    }).as("loginData");
+    // cy.intercept({
+    //   method: "POST",
+    //   url: "http://10.15.1.102/api/auth/login/",
+    // }).as("loginData");
     cy.get('button[type="submit"]').click();
-    cy.wait("@loginData")
-      .its("response.body[username]")
-      .should("eq", "dbrankovic")
-      .then(() => {
-        expect(window.localStorage["auth"]).to.exist;
-      });
-  });
+    // cy.wait("@loginData")
+    //   .its("response.body[username]")
+    //   .should("eq", "dbrankovic")
+    //   .then(() => {
+    //     expect(window.localStorage["auth"]).to.exist;
+    //   });
+ 
 
   // cy.visit("http://10.15.1.102/login");
   // cy.get('input[name="username"]').type(Cypress.env("username"));

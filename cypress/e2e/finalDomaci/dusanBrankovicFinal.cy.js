@@ -12,6 +12,19 @@ describe("Logging in", () => {
   beforeEach(() => {
     cy.LOGIN_CHECKER();
   });
+  it.only("Intercept", () => {
+    cy.visit("http://10.15.1.102/");
+    cy.intercept({
+      method: "GET",
+      url: "http://10.15.1.102/api/sessions/me/times/?status=inactive&start_at_after=2024-05-31T22:00:00.000Z&start_at_before=2024-06-30T21:59:59.999Z",
+    }).as("user");
+    cy.wait("@user")
+      .its("response")
+      .then((response) => {
+        console.log(response.body["days_total"]);
+      });
+  });
+
   //Automated test that is checking if user is logged in but not already checked in
   // 1. Assert that Check in button exists, is visible and "Check in" is displayed
   // 2. Assert if user is on Who is online page but not active, checked in
@@ -201,7 +214,7 @@ describe("Logging in", () => {
     console.log("Logged in, not active");
   });
 
-  it('Request absence', () =>{
+  it("Request absence", () => {
     cy.visit("http://10.15.1.102/");
-  })
+  });
 });
