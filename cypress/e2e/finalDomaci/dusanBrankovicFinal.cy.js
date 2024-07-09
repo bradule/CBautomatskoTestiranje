@@ -18,9 +18,11 @@ describe("Logging in", () => {
       method: "GET",
       url: "http://10.15.1.102/api/sessions/me/times/?status=inactive&start_at_after=2024-05-31T22:00:00.000Z&start_at_before=2024-06-30T21:59:59.999Z",
     }).as("user");
+    // cy.reload()
     cy.wait("@user")
       .its("response")
       .then((response) => {
+        cy.get('p').contains('Total days').next('p').invoke('text').should('equal', '' + response.body["days_total"]);
         console.log(response.body["days_total"]);
       });
   });
